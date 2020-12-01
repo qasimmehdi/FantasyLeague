@@ -22,7 +22,12 @@ const App: () => React$Node = () => {
         <Stack.Screen name="StartupScreen" component={StartupScreen} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Signup" component={Signup} />
-        <Stack.Screen name="HomeTabNav" component={HomeTabNav} />
+
+        <Stack.Screen
+          name="HomeTabNav"
+          component={HomeTabNav}
+          options={{title: 'Fantasy League'}}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
