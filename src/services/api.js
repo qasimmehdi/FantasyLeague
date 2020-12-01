@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://182.189.94.159:27019/api';
+const BASE_URL = 'http://103.79.18.248:27019/api';
 
 export function addLeague(payload) {
   return new Promise((resolve, reject) => {

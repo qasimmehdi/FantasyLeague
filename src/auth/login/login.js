@@ -5,6 +5,7 @@ import React, {useState} from 'react';
 import {View} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {COLOR} from '../../colors';
+import {loginUser} from '../../services/auth';
 
 export default function Login({navigation}) {
   const [email, setEmail] = useState('');
@@ -35,15 +36,16 @@ export default function Login({navigation}) {
       />
       <Button
         color="info"
-        onPress={() =>
+        onPress={() =>{
           //hit login api
+          loginUser(email,password)
           navigation.dispatch(
             CommonActions.reset({
               index: 0,
               routes: [{name: 'HomeTabNav'}],
             }),
           )
-        }>
+        }}>
         Login
       </Button>
       <TouchableOpacity onPress={() => navigation.navigate('Signup')}>

@@ -4,6 +4,7 @@ import React, {useState} from 'react';
 import {View} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {COLOR} from '../../colors';
+import {Register} from '../services/api';
 
 export default function Signup({navigation}) {
   const [name, setName] = useState('');
@@ -38,7 +39,11 @@ export default function Signup({navigation}) {
         value={password}
         onChangeText={setPassword}
       />
-      <Button color="info">Signup</Button>
+      <Button onPress={() => Register({
+        Email:email,
+        Password:password,
+        FullName:name
+      })} color="info">Signup</Button>
       <TouchableOpacity onPress={() => navigation.navigate('Login')}>
         <Text size={10}>Already have an account?</Text>
       </TouchableOpacity>
